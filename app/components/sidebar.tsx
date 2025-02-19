@@ -6,10 +6,7 @@ import { IconButton } from "./button";
 import GithubIcon from "../icons/github.svg";
 import AddIcon from "../icons/add.svg";
 import DeleteIcon from "../icons/delete.svg";
-import MaskIcon from "../icons/mask.svg";
-import McpIcon from "../icons/mcp.svg";
 import DragIcon from "../icons/drag.svg";
-import DiscoveryIcon from "../icons/discovery.svg";
 
 import Locale from "../locales";
 
@@ -27,7 +24,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
-import { Selector, showConfirm } from "./ui-lib";
+import { showConfirm } from "./ui-lib";
 import clsx from "clsx";
 import { isMcpEnabled } from "../mcp/actions";
 
@@ -253,7 +250,7 @@ export function SideBar(props: { className?: string }) {
         //logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
       >
-        <div className={styles["sidebar-header-bar"]}>
+        {/* <div className={styles["sidebar-header-bar"]}>
           <IconButton
             icon={<MaskIcon />}
             text={shouldNarrow ? undefined : Locale.Mask.Name}
@@ -301,7 +298,7 @@ export function SideBar(props: { className?: string }) {
               navigate(s[0], { state: { fromHome: true } });
             }}
           />
-        )}
+        )} */}
       </SideBarHeader>
       <SideBarBody
         onClick={(e) => {
