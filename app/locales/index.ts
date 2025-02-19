@@ -163,9 +163,5 @@ export const STT_LANG_MAP: Record<Lang, string> = {
 };
 
 export function getSTTLang(): string {
-  try {
-    return STT_LANG_MAP[getLang()];
-  } catch {
-    return DEFAULT_STT_LANG;
-  }
+  return DEFAULT_STT_LANG;
 }
