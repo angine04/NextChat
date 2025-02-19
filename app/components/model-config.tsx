@@ -19,7 +19,7 @@ export function ModelConfigList(props: {
     "provider.providerName",
   );
   const value = `${props.modelConfig.model}@${props.modelConfig?.providerName}`;
-  const compressModelValue = `${props.modelConfig.compressModel}@${props.modelConfig?.compressProviderName}`;
+  const compressModelValue = `gpt-4o-mini@OpenAI`;
 
   return (
     <>
