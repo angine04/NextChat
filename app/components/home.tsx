@@ -5,8 +5,6 @@ require("../polyfill");
 import { useEffect, useState } from "react";
 import styles from "./home.module.scss";
 
-import LoadingIcon from "../icons/three-dots.svg";
-
 import { getCSSVar, useMobileScreen } from "../utils";
 
 import dynamic from "next/dynamic";
@@ -34,7 +32,7 @@ export function Loading(props: { noLogo?: boolean }) {
   return (
     <div className={clsx("no-dark", styles["loading-content"])}>
       {/* {!props.noLogo && <BotIcon />} */}
-      <LoadingIcon />
+      <span>Loading...</span>
     </div>
   );
 }

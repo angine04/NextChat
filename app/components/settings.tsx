@@ -7,7 +7,6 @@ import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import CopyIcon from "../icons/copy.svg";
 import ClearIcon from "../icons/clear.svg";
-import LoadingIcon from "../icons/three-dots.svg";
 import EditIcon from "../icons/edit.svg";
 import FireIcon from "../icons/fire.svg";
 import EyeIcon from "../icons/eye.svg";
@@ -311,7 +310,7 @@ function CheckButton() {
         checkState === "none" ? (
           <ConnectionIcon />
         ) : checkState === "checking" ? (
-          <LoadingIcon />
+          <span>Loading...</span>
         ) : checkState === "success" ? (
           <CloudSuccessIcon />
         ) : checkState === "failed" ? (
@@ -1521,7 +1520,7 @@ export function Settings() {
             }
           >
             {checkingUpdate ? (
-              <LoadingIcon />
+              <span>Loading...</span>
             ) : hasNewVersion ? (
               clientConfig?.isApp ? (
                 <IconButton

@@ -23,7 +23,6 @@ import CopyIcon from "@/app/icons/copy.svg";
 import PromptIcon from "@/app/icons/prompt.svg";
 import ResetIcon from "@/app/icons/reload.svg";
 import { useSdStore } from "@/app/store/sd";
-import LoadingIcon from "@/app/icons/three-dots.svg";
 import ErrorIcon from "@/app/icons/delete.svg";
 import SDIcon from "@/app/icons/sd.svg";
 import { Property } from "csstype";
@@ -185,7 +184,7 @@ export function Sd() {
                         </div>
                       ) : (
                         <div className={styles["pre-img"]}>
-                          <LoadingIcon />
+                          <span>Loading...</span>
                         </div>
                       )}
                       <div

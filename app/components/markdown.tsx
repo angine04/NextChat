@@ -9,7 +9,6 @@ import { useRef, useState, RefObject, useEffect, useMemo } from "react";
 import { copyToClipboard, useWindowSize } from "../utils";
 import mermaid from "mermaid";
 import Locale from "../locales";
-import LoadingIcon from "../icons/three-dots.svg";
 import ReloadButtonIcon from "../icons/reload.svg";
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
@@ -343,7 +342,7 @@ export function Markdown(
       dir="auto"
     >
       {props.loading ? (
-        <LoadingIcon />
+        <span>Loading...</span>
       ) : (
         <MarkdownContent content={props.content} />
       )}

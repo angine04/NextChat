@@ -20,7 +20,6 @@ import {
 } from "../utils";
 
 import CopyIcon from "../icons/copy.svg";
-import LoadingIcon from "../icons/three-dots.svg";
 import ChatGptIcon from "../icons/chatgpt.png";
 import ShareIcon from "../icons/share.svg";
 
@@ -42,7 +41,7 @@ import { MaskAvatar } from "./mask";
 import clsx from "clsx";
 
 const Markdown = dynamic(async () => (await import("./markdown")).Markdown, {
-  loading: () => <LoadingIcon />,
+  loading: () => <span>Loading...</span>,
 });
 
 export function ExportMessageModal(props: { onClose: () => void }) {
@@ -384,7 +383,7 @@ export function PreviewActions(props: {
           text={Locale.Export.Share}
           bordered
           shadow
-          icon={loading ? <LoadingIcon /> : <ShareIcon />}
+          icon={loading ? <span>Loading...</span> : <ShareIcon />}
           onClick={share}
         ></IconButton>
       </div>
