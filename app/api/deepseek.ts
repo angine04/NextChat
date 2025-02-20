@@ -1,10 +1,5 @@
 import { getServerSideConfig } from "@/app/config/server";
-import {
-  DEEPSEEK_BASE_URL,
-  ApiPath,
-  ModelProvider,
-  ServiceProvider,
-} from "@/app/constant";
+import { ApiPath, ModelProvider, ServiceProvider } from "@/app/constant";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/app/api/auth";
@@ -44,7 +39,9 @@ async function request(req: NextRequest) {
   // alibaba use base url or just remove the path
   let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.DeepSeek, "");
 
-  let baseUrl = serverConfig.deepseekUrl || DEEPSEEK_BASE_URL;
+  //let baseUrl = serverConfig.deepseekUrl || DEEPSEEK_BASE_URL;
+
+  let baseUrl = "https://aistudio.baidu.com/llm/lmapi/v3/";
 
   if (!baseUrl.startsWith("http")) {
     baseUrl = `https://${baseUrl}`;
@@ -64,7 +61,8 @@ async function request(req: NextRequest) {
     10 * 60 * 1000,
   );
 
-  const fetchUrl = `${baseUrl}${path}`;
+  //const fetchUrl = `${baseUrl}${path}`;
+  const fetchUrl = `https://aistudio.baidu.com/llm/lmapi/v3/chat/completions`;
   const fetchOptions: RequestInit = {
     headers: {
       "Content-Type": "application/json",
